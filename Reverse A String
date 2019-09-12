@@ -1,0 +1,24 @@
+using System;
+
+namespace ConsoleApp4
+{
+    class ReverseAString
+    {
+        static void Main(string[] args)
+        {
+            var name = "Anurag";
+            var nameLength = name.Length;
+            char[] reverse = new char[name.Length];
+            var halfNameLength = Math.Ceiling((decimal)nameLength / 2);
+            for (int i = 0; i < halfNameLength; i++)
+            {
+                var start = name[i];
+                var end = name[nameLength - 1 - i];
+                reverse[i] = end;
+                reverse[nameLength - 1 - i] = start;
+            }
+            Console.WriteLine(new string(reverse));
+            Console.ReadKey();
+        }
+    }
+}
